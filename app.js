@@ -112,10 +112,10 @@ var Client = require('coinbase').Client;
 var client = new Client({'apiKey': 'API KEY',
                          'apiSecret': 'API SECRET'});
 
-client.getAccount('2bbf394c-193b-5b2a-9155-3b4732659ede', function(err, account) {
+client.getAccount('test', function(err, account) {
   account.buy({"amount": "10",
                "currency": best_altcoin,
-               "payment_method": "83562370-3e5c-51db-87da-752af5ab9559"}, function(err, tx) {
+               "payment_method": "test"}, function(err, tx) {
     console.log(tx);
   });
 });
@@ -148,9 +148,9 @@ console.log(account.getBalance("BTC"));
 
 //Send 0.1 BTC to BitPay account
 const txHash = account
-    .send("1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa", 0.01, "BTC")
+    .send("test", 0.01, "BTC")
     .on("transactionHash", console.log)
-    // > "3387418aaddb4927209c5032f515aa442a6587d6e54677f08a03b8fa7789e688"
+    // > "test"
     .on("confirmation", console.log);
 // > 1
 // > 2 ...
